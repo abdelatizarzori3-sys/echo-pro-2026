@@ -15,9 +15,11 @@ DEMO_NOTES_BACKUP_FILE = "echo_demo_notes.backup.json"
 
 class NeonColors:
     CYAN = '\033[96m'
+    MAGENTA = '\033[95m'
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     RED = '\033[91m'
+    DIM = '\033[2m'
     BOLD = '\033[1m'
     END = '\033[0m'
 
@@ -135,12 +137,15 @@ def import_demo_notes_backup():
 
 def main_menu():
     while True:
-        print(f"{NeonColors.CYAN}=== ECHO PRO 2026: VAULT MANAGER ==={NeonColors.END}")
-        print("1. Encrypt & Save Data (legacy XOR vault)")
-        print("2. Decrypt & Read Data (legacy XOR vault)")
-        print("3. Export Pro encrypted demo-notes backup (subscription required)")
-        print("4. Import Pro encrypted demo-notes backup (subscription required)")
-        print("5. Exit")
+        print(f"\n{NeonColors.MAGENTA}╔══════════════════════════════════════════════════════╗{NeonColors.END}")
+        print(f"{NeonColors.MAGENTA}║{NeonColors.END} {NeonColors.CYAN}{NeonColors.BOLD}ECHO // VAULT CONSOLE 2026{NeonColors.END}                         {NeonColors.MAGENTA}║{NeonColors.END}")
+        print(f"{NeonColors.MAGENTA}║{NeonColors.END} {NeonColors.DIM}Legacy vault and subscription-verified demo-note backup{NeonColors.END} {NeonColors.MAGENTA}║{NeonColors.END}")
+        print(f"{NeonColors.MAGENTA}╚══════════════════════════════════════════════════════╝{NeonColors.END}")
+        print(f"{NeonColors.CYAN}[01]{NeonColors.END} Encrypt & Save Data {NeonColors.DIM}(legacy XOR vault){NeonColors.END}")
+        print(f"{NeonColors.CYAN}[02]{NeonColors.END} Decrypt & Read Data {NeonColors.DIM}(legacy XOR vault){NeonColors.END}")
+        print(f"{NeonColors.YELLOW}[03]{NeonColors.END} Export Pro encrypted demo-notes backup {NeonColors.DIM}(subscription required){NeonColors.END}")
+        print(f"{NeonColors.YELLOW}[04]{NeonColors.END} Import Pro encrypted demo-notes backup {NeonColors.DIM}(subscription required){NeonColors.END}")
+        print(f"{NeonColors.RED}[05]{NeonColors.END} Exit")
         choice = input(f"{NeonColors.YELLOW}Select Option (1-5): {NeonColors.END}")
 
         if choice == "1":
